@@ -75,30 +75,36 @@ namespace AFG_GUI_2
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            if (button1.BackColor == Color.FromArgb(175, 1, 26))
+            if (button1.BackColor == Color.LightGreen)
             {
+                button1.BackColor = Color.FromArgb(164, 9, 229);
+                button1.Text = "Generate";
+
+                // time handler
+                endTime = DateTime.Now;
+                textBox2.Text = endTime.ToString();
+            }
+            else if (button1.BackColor == Color.FromArgb(164, 9, 229))
+            {
+                button1.BackColor = Color.FromArgb(175, 1, 26);
+                button1.Text = "Start";
+
                 // clear old times
                 textBox1.Clear();
                 textBox2.Clear();
 
+            }
+            else
+            {
                 button1.BackColor = Color.LightGreen;
                 button1.Text = "Stop";
 
                 // time handler
                 startTime = DateTime.Now;
                 textBox1.Text = startTime.ToString();
-            }
-            else
-            {
-                button1.BackColor = Color.FromArgb(175, 1, 26);
-                button1.Text = "Start";
 
-                // time handler
-                endTime = DateTime.Now;
-                textBox2.Text = endTime.ToString();
             }
-            
+
         }
 
         public void updatePreview()
@@ -508,7 +514,7 @@ namespace AFG_GUI_2
 
 
                 // Start button
-                button1.BackColor = Color.FromArgb(175, 1, 26);
+                button1.BackColor = Color.FromArgb(164, 9, 229);
                 button1.ForeColor = Color.Black;
 
                 // graph
@@ -576,7 +582,7 @@ namespace AFG_GUI_2
 
 
                 // Start button
-                button1.BackColor = Color.FromArgb(175, 1, 26);
+                button1.BackColor = Color.FromArgb(164, 9, 229);
                 button1.ForeColor = Color.Black;
 
                 // graph

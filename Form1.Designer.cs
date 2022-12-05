@@ -201,14 +201,14 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(1)))), ((int)(((byte)(26)))));
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(9)))), ((int)(((byte)(229)))));
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Location = new System.Drawing.Point(774, 99);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(132, 70);
             this.button1.TabIndex = 14;
-            this.button1.Text = "Start";
+            this.button1.Text = "Generate";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
