@@ -40,7 +40,7 @@ namespace AFG_GUI_2
             // default waveform setup
             numericUpDown1.Value = 5;
             numericUpDown2.Value = 0;
-            numericUpDown3.Value = 1;
+            numericUpDown3.Value = 10000;
             numericUpDown4.Value = 50;
             comboBox2.SelectedIndex = 0;
 
@@ -51,7 +51,7 @@ namespace AFG_GUI_2
         }
 
 
-        private void portComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             serialPort1.Close();
             try
@@ -83,6 +83,8 @@ namespace AFG_GUI_2
                 // time handler
                 endTime = DateTime.Now;
                 textBox2.Text = endTime.ToString();
+
+                serialPort1.Write("Stop\n");
             }
             else if (button1.BackColor == Color.FromArgb(164, 9, 229))
             {
@@ -92,7 +94,9 @@ namespace AFG_GUI_2
                 // clear old times
                 textBox1.Clear();
                 textBox2.Clear();
-
+                string message = "" + comboBox2.SelectedIndex + "," + numericUpDown1.Value + "," + numericUpDown2.Value + ","
+                                    + numericUpDown3.Value + "," + numericUpDown4.Value + "\n";
+                serialPort1.Write(message);
             }
             else
             {
@@ -102,6 +106,8 @@ namespace AFG_GUI_2
                 // time handler
                 startTime = DateTime.Now;
                 textBox1.Text = startTime.ToString();
+
+                serialPort1.Write("Start\n");
 
             }
 
